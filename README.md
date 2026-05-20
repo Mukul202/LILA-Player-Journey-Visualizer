@@ -11,8 +11,7 @@ heatmaps.
 
 ## Live Demo
 
-<!-- Replace with your deployed URL after running the Deployment steps below. -->
-**`<PASTE_DEPLOYED_URL_HERE>`**
+**`https://lila-player-journey-visualizer-tawny.vercel.app`**
 
 ---
 
