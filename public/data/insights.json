@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-05-20T11:35:22.129Z",
+  "insights": [
+    {
+      "id": 1,
+      "title": "Matches run as PvE — players almost never meet each other",
+      "caughtMyEye": "An extraction shooter is sold on player conflict, yet across 796 matches and 89,104 telemetry rows there are only 6 human-vs-human combat events.",
+      "evidence": [
+        "Only 2 of 796 matches ever had two human players present at once; 794 (99.7%) had fewer than two, so a human-vs-human encounter is structurally impossible in them. Mean humans/match: 0.98.",
+        "Combat is 3 `Kill` + 3 `Killed` (human-vs-human) against 2,415 `BotKill` + 700 `BotKilled` (vs bots) — PvP is 0.2% of all combat.",
+        "Humans beat bots roughly 3.5:1, so even the PvE threat is mild."
+      ],
+      "recommendation": "Treat humans-per-match as a first-class design lever — raise lobby population through matchmaking, or route the storm and POIs so the few humans present are funnelled together. Map geometry cannot manufacture PvP encounters if humans never share the playable space.",
+      "metricsAffected": [
+        "Encounter rate",
+        "PvP engagement",
+        "Player retention",
+        "Loot contest rate"
+      ],
+      "whyItMatters": "Level design intended to stage ambushes and contested extractions currently has no audience for it — the maps are being played solo against AI."
+    },
+    {
+      "id": 2,
+      "title": "The core loop is looting; combat just rides the loot trail",
+      "caughtMyEye": "Stripping out movement samples, 80.3% of everything players do is pick up loot — fighting is a minor, incidental activity.",
+      "evidence": [
+        "12,885 `Loot` events vs only 3,121 combat events and 39 storm deaths (16,045 discrete events total).",
+        "On Ambrose Valley, loot density and kill density correlate at r = 0.45 across traversed cells — bot fights happen on the loot routes, not in separate arenas.",
+        "Kills land in only 30.6% of the 1599 cells players traverse, and that combat-bearing minority overlaps the loot footprint."
+      ],
+      "recommendation": "Use loot placement as the primary tool for shaping pace and risk. Because combat follows loot, clustering high-value loot creates contested pockets and thinning it creates safe traversal — loot layout, not combat-arena geometry, is the real lever on this map.",
+      "metricsAffected": [
+        "Loot contest rate",
+        "Encounter rate",
+        "Map utilization",
+        "Player engagement"
+      ],
+      "whyItMatters": "If 80% of the player experience is looting, the loot table and its spatial distribution — not bespoke fight spaces — decide where the game's tension lives."
+    },
+    {
+      "id": 3,
+      "title": "The storm rarely decides a match — closing pressure is missing",
+      "caughtMyEye": "The shrinking storm is the pacing engine of a battle-royale-style game, yet it kills almost nobody.",
+      "evidence": [
+        "39 `KilledByStorm` deaths across 796 matches — 0.049 per match.",
+        "757 matches (95.1%) recorded zero storm deaths.",
+        "The storm is just 5.3% of all 742 deaths; bots alone caused 700."
+      ],
+      "recommendation": "Tighten the storm — start it sooner, shrink it faster, or raise its damage so the closing zone genuinely threatens stragglers and forces players toward extraction.",
+      "metricsAffected": [
+        "Storm death rate",
+        "Extraction success",
+        "Match pacing",
+        "Late-match encounter rate"
+      ],
+      "whyItMatters": "With no storm pressure there is no forcing function pushing players toward a climactic finish; matches simply fizzle out and the intended late-game risk curve never arrives."
+    }
+  ],
+  "stats": {
+    "matches": 796,
+    "telemetryRows": 89104,
+    "discreteEvents": 16045,
+    "pvpCombatEvents": 6,
+    "pveCombatEvents": 3115,
+    "pvpShareOfCombatPct": 0.2,
+    "matchesUnderTwoHumans": 794,
+    "matchesUnderTwoHumansPct": 99.7,
+    "matchesWithTwoHumans": 2,
+    "maxHumansPerMatch": 2,
+    "meanHumansPerMatch": 0.982,
+    "lootEvents": 12885,
+    "lootShareOfDiscretePct": 80.3,
+    "lootKillCorrelation": 0.448,
+    "primaryMap": "Ambrose Valley",
+    "killCellCoveragePct": 30.6,
+    "stormDeaths": 39,
+    "stormDeathsPerMatch": 0.049,
+    "matchesWithoutStormDeaths": 757,
+    "stormShareOfDeathsPct": 5.3
+  }
+}

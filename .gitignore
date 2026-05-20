@@ -1,0 +1,39 @@
+# dependencies
+/node_modules
+
+# next.js build output
+/.next/
+/out/
+
+# production
+/build
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# misc
+.DS_Store
+*.pem
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# deploy platforms
+.vercel
+.netlify
+
+# editor / tooling
+.idea/
+.vscode/
+.claude/
+
+# NOTE: player_data/ (raw parquet + minimaps) and public/data + public/maps
+# (generated artifacts) are intentionally committed so the repo is fully
+# self-contained and the deployed app works without a build-time data step.

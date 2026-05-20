@@ -1,0 +1,35 @@
+{
+  "name": "lila-player-journey",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Player Journey Visualization Tool for LILA BLACK level designers",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "inspect:data": "tsx scripts/inspect-data.ts",
+    "preprocess:data": "tsx scripts/preprocess.ts",
+    "generate:insights": "tsx scripts/generate-insights.ts",
+    "data": "npm run preprocess:data && npm run generate:insights"
+  },
+  "dependencies": {
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "zustand": "^5.0.13"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.5.0",
+    "hyparquet": "^1.25.8",
+    "hyparquet-compressors": "^1.1.1",
+    "postcss": "^8.5.15",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.4.19",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  }
+}
